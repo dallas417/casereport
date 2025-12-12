@@ -1,54 +1,59 @@
 import "./Dash.css";
+import annagarcia from "../../assets/annagarcia.png";
 import "../../assets/animate.css";
-import compliments from "../../data/compliments.json";
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { Auth } from "../../utils/Auth";
 
 export default function App() {
     const navigate = useNavigate(); 
-    const [text, setText] = useState(null);
+
+    const { loading, session } = Auth();
     const [ready, setReady] = useState(false);
-    const textRef = useRef(null);
-    const fadeOutTimeoutRef = useRef(null);
-    const savedNameRef = useRef(localStorage.getItem("userName"));
-
+    
     useEffect(() => {
-        if (!savedNameRef.current) return navigate("/name");
-        setReady(true);
-    }, []);
+        if (loading) return; 
+        if (!session) return navigate("/init");
+        setReady(true); 
+    }, [loading]);
 
-    useEffect(() => {
-        setDisplayedCompliment(savedNameRef.current); 
-
-        const intervalId = setInterval(setDisplayedCompliment, 7500, savedNameRef.current);
-
-        return () => { 
-            clearInterval(intervalId); 
-            clearTimeout(fadeOutTimeoutRef.current);
-        };
-    }, [ready])
-
-    const setDisplayedCompliment = (nameToUse) => {
-        if (!textRef.current) return;
-
-        textRef.current.style.animation = "fadeIn 1s";
-        const randomIndex = Math.floor(Math.random() * compliments.length);
-        const rawCompliment = compliments[randomIndex];
-        const personalCompliment = rawCompliment.replace("${name}", nameToUse); 
-        setText(personalCompliment);
-
-        fadeOutTimeoutRef.current = setTimeout(() => {
-            textRef.current?.style && (textRef.current.style.animation = "fadeOut 1s forwards");
-        }, 6400);
-    };
-
-    const changeName = () => navigate("/name");
+    const goToCase = () => {
+        navigate("/93-2003-XC");
+    }
 
     if (!ready) return null; 
-    return (
-        <div className="app">
-            <button onClick={changeName}> Change Name </button> 
-            <p ref={textRef}> {text} </p>
+  return (
+    <div className="fbi-system">
+      <div className="scan-line"></div>
+      
+      <header className="system-header">
+        <span className="bureau-title">FEDERAL BUREAU OF INVESTIGATION</span>
+        <span className="system-status">SYSTEM STATUS: SECURE // LEVEL 4</span>
+      </header>
+
+      <main className="dossier-container">
+        <div className="case-card">
+          <div className="stamp-overlay">CONFIDENTIAL</div>
+          
+          <div className="mugshot-wrapper">
+            <img src={annagarcia} alt="Subject: Anna Garcia" className="mugshot" />
+            <div className="reticle"></div>
+          </div>
+
+          <div className="case-details">
+            <h1 className="subject-name">SUBJECT: GARCIA, ANNA</h1>
+            <div className="meta-data">
+              <p><strong>CASE ID:</strong> 93-2003-XC</p>
+              <p><strong>STATUS:</strong> <span className="status-indicator">ACTIVE INVESTIGATION</span></p>
+              <p><strong>DOB:</strong> 9/11/2004 </p>
+            </div>
+            
+            <button className="access-btn" onClick={goToCase}>
+              ACCESS CASE FILE_
+            </button>
+          </div>
         </div>
-    )
+      </main>
+    </div>
+  );
 }

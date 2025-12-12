@@ -1,0 +1,16 @@
+.app {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.app .seal {
+    animation: zoomInDown 3s forwards;
+    margin: 20px;
+    max-width: calc(100vw - 30px);
+    max-height: calc(100vh - 30px);
+}

@@ -1,5 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
+:root {
+  --fbi-blue: #0a192f;
+  --fbi-dark: #020c1b;
+  --fbi-text: #8892b0;
+  --fbi-highlight: #64ffda;
+  --fbi-alert: #e53935;
+  --font-mono: "Courier New", Courier, monospace;
+}
+
 /* Apply font globally */
 * {
     font-family: "Inter", -apple-system, BlinkMacSystemFont,
@@ -16,6 +25,13 @@ html, body {
     height: 100vh;
     margin: 0;
     padding: 0;
+}
+
+body {
+  margin: 0;
+  background-color: var(--fbi-dark);
+  font-family: var(--font-mono);
+  overflow: hidden;
 }
 
 #root {

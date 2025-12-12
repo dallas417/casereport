@@ -12,9 +12,12 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@supabase/supabase-js": "^2.87.1",
     "@vitejs/plugin-react": "^5.1.2",
+    "email-validator": "^2.0.4",
     "react": "^19.2.3",
     "react-router-dom": "^7.10.1",
+    "sweetalert2": "^11.26.4",
     "vite": "^7.2.7"
   },
   "devDependencies": {

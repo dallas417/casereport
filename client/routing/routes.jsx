@@ -1,9 +1,13 @@
 import { lazy } from "react"; 
 
 const App = lazy(() => import('../pages/Dash/Dash.jsx'));
-const Name = lazy(() => import('../pages/Name/Name.jsx'));
+const Init = lazy(() => import('../pages/Init/Init.jsx'));
+const SignIn = lazy(() => import('../pages/SignIn/Signin.jsx'));
+const AnnaGarcia = lazy(() => import('../pages/93-2003-XC/93-2003-XC.jsx'));
 
 export const routes = [
-  { path: '/', element: <App />, title: "🥰🥰🥰" },
-  { path: '/name', element: <Name />, title: "Set Your Name" },
+  { path: '/', element: <App />, title: "Cases" },
+  { path: "/init", element: <Init />, title: "Initalizing"},
+  { path: "/signin", element: <SignIn />, title: "Sign In"},
+  { path: "/93-2003-XC", element: <AnnaGarcia />, title: "Anna Garcia Case"},
 ];

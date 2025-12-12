@@ -1,0 +1,295 @@
+:root {
+    --db-dark-bg: #020c1b;
+    --db-panel-bg: #0a192f;
+    --db-border: #172a45;
+    --db-text-primary: #8892b0;
+    --db-text-highlight: #64ffda;
+    --db-alert: #ff3333;
+    --db-alert-bg: rgba(255, 51, 51, 0.1);
+    --font-tech: "Courier New", Courier, monospace;
+    --font-read: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* Slightly easier to read for long blocks */
+}
+
+body, html {
+    background-color: var(--db-dark-bg);
+    color: var(--db-text-primary);
+    font-family: var(--font-read);
+    margin: 0;
+    padding: 0;
+    overflow-y: visible;
+}
+
+/* --- Main Container & Overlay --- */
+.case-file-container {
+    min-height: 100vh;
+    position: relative;
+    background-color: var(--db-dark-bg);
+    /* Optional: subtle grid background pattern */
+    background-image: linear-gradient(var(--db-border) 1px, transparent 1px),
+                      linear-gradient(90deg, var(--db-border) 1px, transparent 1px);
+    background-size: 50px 50px;
+    overflow-y: auto; 
+    overflow-x: hidden;
+}
+
+/* Subtle CRT scanline overlay */
+.scan-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.15),
+        rgba(0, 0, 0, 0.15) 1px,
+        transparent 1px,
+        transparent 2px
+    );
+    pointer-events: none;
+    z-index: 99;
+}
+
+/* --- Top Header Bar --- */
+.db-header {
+    background-color: var(--db-panel-bg);
+    border-bottom: 2px solid var(--db-text-highlight);
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--font-tech);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: var(--db-text-highlight);
+}
+
+.blinkers {
+    animation: blink 1s infinite;
+}
+
+/* --- Main Grid Layout --- */
+.case-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Left column twice as wide as right */
+    gap: 20px;
+    padding: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* --- General Panel Styling --- */
+.panel {
+    background-color: var(--db-panel-bg);
+    border: 1px solid var(--db-border);
+    margin-bottom: 25px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.panel-header {
+    background-color: rgba(23, 42, 69, 0.5);
+    border-bottom: 1px solid var(--db-border);
+    margin: 0;
+    padding: 10px 15px;
+    font-family: var(--font-tech);
+    font-size: 1rem;
+    text-transform: uppercase;
+    color: var(--db-text-highlight);
+    letter-spacing: 1px;
+}
+
+.panel-content {
+    padding: 20px;
+}
+
+/* Utility class for blocks of text that should look like raw data logs */
+.courier-text {
+    font-family: var(--font-tech);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.courier-text p {
+    margin-bottom: 1.5em;
+}
+
+.courier-text strong {
+    color: #ccd6f6; /* Slightly brighter text for emphasis */
+}
+
+/* --- Specific Panel Styles --- */
+
+/* Case Title Panel */
+.case-title-panel {
+    padding: 20px;
+    border: 2px solid var(--db-text-highlight);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.case-title-panel h1 {
+    margin: 0;
+    font-family: var(--font-tech);
+    font-size: 1.8rem;
+    color: #ffffff;
+}
+.case-title-panel .prefix {
+    color: var(--db-text-highlight);
+    font-size: 1rem;
+}
+
+.closed-stamp {
+    border: 3px solid var(--db-alert);
+    color: var(--db-alert);
+    font-weight: bold;
+    padding: 5px 15px;
+    font-family: var(--font-tech);
+    text-transform: uppercase;
+    transform: rotate(-5deg);
+    opacity: 0.8;
+}
+
+/* Profile Data Grid */
+.data-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 20px;
+}
+
+.data-point {
+    border-bottom: 1px solid var(--db-border);
+    padding-bottom: 5px;
+    font-family: var(--font-tech);
+}
+
+.data-point .label {
+    color: var(--db-text-highlight);
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+/* Forensics & Images */
+.crime-scene-image-container {
+    margin: 25px 0;
+    border: 2px dashed var(--db-text-highlight);
+    padding: 5px;
+    background: rgba(100, 255, 218, 0.05);
+}
+
+.evidence-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: grayscale(100%) contrast(1.2); /* Grayscale effect for images */
+}
+
+.img-caption {
+    display: block;
+    text-align: center;
+    font-family: var(--font-tech);
+    font-size: 0.8rem;
+    padding: 5px;
+    color: var(--db-text-highlight);
+}
+
+/* Toxicology Alert */
+.alert-border {
+    border-color: var(--db-alert);
+}
+.alert-text {
+    color: var(--db-alert);
+}
+.highlight-alert {
+    background-color: var(--db-alert-bg);
+    border-left: 4px solid var(--db-alert);
+    padding: 10px;
+    color: #ffffff;
+}
+
+
+/* --- Right Column: POIs --- */
+
+/* Makes the POI panel stick while scrolling the long narrative */
+.sticky-panel {
+    position: sticky;
+    top: 20px;
+}
+
+.polygraph-summary {
+    padding: 15px;
+    background: rgba(100, 255, 218, 0.1);
+    border-bottom: 1px solid var(--db-border);
+    font-family: var(--font-tech);
+    font-size: 0.9rem;
+}
+.status-ok {
+    color: var(--db-text-highlight);
+    font-weight: bold;
+}
+
+.poi-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 per row on desktop */
+    gap: 15px;
+    padding: 15px;
+}
+
+.poi-card {
+    border: 1px solid var(--db-border);
+    background: var(--db-dark-bg);
+    display: flex;
+    flex-direction: column;
+}
+
+.mugshot-small {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--db-border);
+    filter: grayscale(100%);
+}
+
+.poi-data {
+    padding: 10px;
+}
+
+.poi-data h3 {
+    margin: 0 0 5px 0;
+    font-size: 0.9rem;
+    color: #ffffff;
+}
+
+.redacted-text {
+    font-family: var(--font-tech);
+    font-size: 0.7rem;
+    color: var(--db-alert);
+    background: #2a0a0a;
+    padding: 2px;
+}
+
+.empty-slot {
+    background: transparent;
+    border: 2px dashed var(--db-border);
+    justify-content: center;
+    align-items: center;
+    opacity: 0.5;
+}
+
+/* --- Animations --- */
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 900px) {
+    .case-grid {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    }
+    .sticky-panel {
+        position: relative; /* Disable sticky on mobile */
+        top: 0;
+    }
+}

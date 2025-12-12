@@ -14,8 +14,8 @@ export default function AnimatedOutlet() {
     useEffect(() => {
         const matches = matchRoutes(routes, displayLocation);
         const title = matches?.[0]?.route?.title
-            ? `Compliment | ${matches[0].route.title}`
-            : "Compliment"
+            ? `FBI | ${matches[0].route.title}`
+            : "FBI"
         document.title = title; 
         if (location == displayLocation) return;
         setTransitionStage("fadeOut"); 
