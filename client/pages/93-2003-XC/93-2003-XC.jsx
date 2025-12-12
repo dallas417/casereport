@@ -33,7 +33,7 @@ const AnnaGarciaCase = () => {
             <h1>
               <span className="prefix">SUBJECT DECEASED:</span> GARCIA, ANNA
             </h1>
-            <div className="closed-stamp">CASE CLOSED</div>
+            <div className="closed-stamp">CASE CRACKED MS Z</div>
           </section>
 
            {/* --- Section 1: Initial Incident Report --- */}
@@ -78,9 +78,9 @@ const AnnaGarciaCase = () => {
            <section className="panel toxicology-panel alert-border">
             <h2 className="panel-header alert-text">CRITICAL: Toxicology Report Summary</h2>
              <div className="panel-content courier-text">
-                 <p>Post-mortem biochemical analysis returned critical findings. Screening detected the presence of Acetaminophen (Tylenol) in standard therapeutic concentrations.</p>
+                 <p>Post-mortem biochemical analysis returned critical findings. Screening detected the presence of Acetaminophen (Tylenol) Garcia's system. The presecene of Acetaminophen was not immeditealy notable, given it's standard therapeutic concentration, but became a particular calamatiy given other substances found in the decendents system. </p>
                  <p className="highlight-alert"><strong>FATAL ANOMALY DETECTED:</strong> Further spectrometry confirmed lethal concentrations of Potassium Cyanide within the decedent's system.</p>
-                 <p><strong>INVESTIGATIVE CONCLUSION:</strong> The mechanism of death is determined to be acute cyanide poisoning, introduced via a tampered Acetaminophen capsule ingested by the subject. The head trauma is considered secondary to the incapacitation caused by the poison. Subsequent investigation into the Tylenol supply chain and the listed Persons of Interest conclusively determined that none of the immediate suspects had direct involvement with the introduction of the cyanide agent into the specific bottle utilized by the decedent.</p>
+                 <p><strong>INVESTIGATIVE CONCLUSION:</strong> The mechanism of death is determined to be acute cyanide poisoning, introduced via a tampered Acetaminophen capsule ingested by the subject. The head trauma is considered secondary to the incapacitation caused by the poison. Subsequent investigation into the Tylenol supply chain and the listed Persons of Interest conclusively determined that none of the immediate suspects had direct involvement with the introduction of the cyanide agent into the specific bottle utilized by the decedent. Garcia likely died </p>
              </div>
            </section>
 
@@ -102,7 +102,7 @@ const AnnaGarciaCase = () => {
                     <img src={piedmontHeadShot} alt="Eric Piedmont" className="mugshot-small"/>
                     <div className="poi-data">
                         <h3>Eric Piedmont</h3>
-                        <p className="redacted-text">[RELATIONSHIP/MOTIVE DATA PENDING ENTRY]</p>
+                        <p className="redacted-text">[20-year-old college student. He was Anna's boyfriend. Individuals note tha Anna and Eric had been arguing before Anna's death, but seemed to have worked things out. Piedmont is of good character and indicates nothing suspicious.]</p>
                     </div>
                 </div>
                  {/* POI 2 */}
@@ -110,7 +110,7 @@ const AnnaGarciaCase = () => {
                     <img src={opalHeadShot} alt="Dr Elsie Opal" className="mugshot-small"/>
                     <div className="poi-data">
                         <h3>Dr. Elsie Opal</h3>
-                        <p className="redacted-text">[PROFESSOR/ADVISOR DATA PENDING ENTRY]</p>
+                        <p className="redacted-text">[50-year-old college professor. Anna and Opal had a good relationship. Before Garcia's murder she requested a letter of recommendation from Opal. Although Opal declined, she is still of good character and indicates nothing suspoicious.]</p>
                     </div>
                 </div>
                  {/* POI 3 */}
@@ -118,7 +118,7 @@ const AnnaGarciaCase = () => {
                     <img src={hallHeadShot} alt="Dominique Hall" className="mugshot-small"/>
                     <div className="poi-data">
                         <h3>Dominique Hall</h3>
-                        <p className="redacted-text">[CLASSMATE/RIVAL DATA PENDING ENTRY]</p>
+                        <p className="redacted-text">[19-year-old college student. Was a classmate of Anna Garcia. Garica and Hall and a competitive relationship. Before Garcia's murder, both her and hall had been competeing for a prestigious scholarship which Garcia won. However, no evidence connects Hall to Garcia's murder. </p>
                     </div>
                 </div>
                  {/* POI 4 */}
@@ -126,7 +126,7 @@ const AnnaGarciaCase = () => {
                     <img src={diazHeadShot} alt="Taylor Diaz" className="mugshot-small"/>
                     <div className="poi-data">
                         <h3>Taylor Diaz</h3>
-                        <p className="redacted-text">[WITNESS - FOUND BODY. DATA PENDING.]</p>
+                        <p className="redacted-text">[19-year-old college studnet. He was a classmate and friend of Anna Garcia. Diaz found the decendent after she had passed away in the research lab and immediatley notified law enforcement.]</p>
                     </div>
                 </div>
                  {/* POI 5 */}
@@ -134,13 +134,13 @@ const AnnaGarciaCase = () => {
                     <img src={greeneHeadShot} alt="Sam Greene" className="mugshot-small"/>
                     <div className="poi-data">
                         <h3>Sam Greene</h3>
-                        <p className="redacted-text">[EX-PARTNER DATA PENDING ENTRY]</p>
+                        <p className="redacted-text">[20-year-old college student. Greene and Garcia were teammates on the same soccer team. Individuals note that Garcia and Greene were arguing a soccer tournment before Garcia's death. Garcia also collided with Greene during a soccer practice shortly before her passing.]</p>
                     </div>
                 </div>
                 {/* Empty slot for layout balance if needed, or add 6th later */}
                  <div className="poi-card empty-slot">
                     <div className="poi-data">
-                        <h3>[SLOT AVAILABLE]</h3>
+                        <h3>[SUSPECTS PRESUMED INNOCENT UNLESS PROVEN GUILTY]</h3>
                     </div>
                 </div>
 
