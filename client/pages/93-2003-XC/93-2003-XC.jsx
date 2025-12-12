@@ -1,9 +1,12 @@
 import React from 'react';
 import './AnnaGarciaCase.css';
 
-// Placeholder images - replace these imports with real paths later
-const placeholderMugshot = "https://via.placeholder.com/150x200/0a192f/64ffda?text=NO+IMAGE";
-const placeholderCrimeScene = "https://via.placeholder.com/800x400/0a192f/64ffda?text=CRIME+SCENE+PHOTO+EVIDENCE+-+RESTRICTED+ACCESS";
+import piedmontHeadShot from "../../assets/piedmont.png";
+import diazHeadShot from "../../assets/diaz.png";
+import opalHeadShot from "../../assets/opal.png";
+import hallHeadShot from "../../assets/hall.png";
+import greeneHeadShot from "../../assets/greene.png";
+import placeholderCrimeScene from "../../assets/greene.png";
 
 const AnnaGarciaCase = () => {
   return (
@@ -96,7 +99,7 @@ const AnnaGarciaCase = () => {
             <div className="poi-grid">
                 {/* POI 1 */}
                 <div className="poi-card">
-                    <img src={placeholderMugshot} alt="Eric Piedmont" className="mugshot-small"/>
+                    <img src={piedmontHeadShot} alt="Eric Piedmont" className="mugshot-small"/>
                     <div className="poi-data">
                         <h3>Eric Piedmont</h3>
                         <p className="redacted-text">[RELATIONSHIP/MOTIVE DATA PENDING ENTRY]</p>
@@ -104,7 +107,7 @@ const AnnaGarciaCase = () => {
                 </div>
                  {/* POI 2 */}
                  <div className="poi-card">
-                    <img src={placeholderMugshot} alt="Dr Elsie Opal" className="mugshot-small"/>
+                    <img src={opalHeadShot} alt="Dr Elsie Opal" className="mugshot-small"/>
                     <div className="poi-data">
                         <h3>Dr. Elsie Opal</h3>
                         <p className="redacted-text">[PROFESSOR/ADVISOR DATA PENDING ENTRY]</p>
@@ -112,7 +115,7 @@ const AnnaGarciaCase = () => {
                 </div>
                  {/* POI 3 */}
                  <div className="poi-card">
-                    <img src={placeholderMugshot} alt="Dominique Hall" className="mugshot-small"/>
+                    <img src={hallHeadShot} alt="Dominique Hall" className="mugshot-small"/>
                     <div className="poi-data">
                         <h3>Dominique Hall</h3>
                         <p className="redacted-text">[CLASSMATE/RIVAL DATA PENDING ENTRY]</p>
@@ -120,7 +123,7 @@ const AnnaGarciaCase = () => {
                 </div>
                  {/* POI 4 */}
                  <div className="poi-card">
-                    <img src={placeholderMugshot} alt="Taylor Diaz" className="mugshot-small"/>
+                    <img src={diazHeadShot} alt="Taylor Diaz" className="mugshot-small"/>
                     <div className="poi-data">
                         <h3>Taylor Diaz</h3>
                         <p className="redacted-text">[WITNESS - FOUND BODY. DATA PENDING.]</p>
@@ -128,7 +131,7 @@ const AnnaGarciaCase = () => {
                 </div>
                  {/* POI 5 */}
                  <div className="poi-card">
-                    <img src={placeholderMugshot} alt="Sam Greene" className="mugshot-small"/>
+                    <img src={greeneHeadShot} alt="Sam Greene" className="mugshot-small"/>
                     <div className="poi-data">
                         <h3>Sam Greene</h3>
                         <p className="redacted-text">[EX-PARTNER DATA PENDING ENTRY]</p>
