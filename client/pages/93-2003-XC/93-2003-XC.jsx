@@ -6,7 +6,7 @@ import diazHeadShot from "../../assets/diaz.png";
 import opalHeadShot from "../../assets/opal.png";
 import hallHeadShot from "../../assets/hall.png";
 import greeneHeadShot from "../../assets/greene.png";
-import placeholderCrimeScene from "../../assets/greene.png";
+import placeholderCrimeScene from "../../assets/crimescene.png";
 
 const AnnaGarciaCase = () => {
   return (
